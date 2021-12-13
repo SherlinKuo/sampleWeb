@@ -7,14 +7,15 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { NewsComponent } from '../components/news/news.component';
 import { HeaderComponent } from '../components/header/header.component';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    FlexLayoutModule
   ],
   declarations: [HomePage, NewsComponent, HeaderComponent]
 })
