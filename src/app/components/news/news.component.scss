@@ -1,0 +1,29 @@
+
+
+h2{
+    font-family: DFKai-SB, "Microsoft JhengHei";
+}
+.news{
+    border: 2px dashed rgb(11, 22, 85);
+    padding: 10px;
+
+}
+
+.news_marquee {
+    animation : slide 7s linear  ; //infinite : 無限次
+    color:rgb(0, 0, 0);
+    position: relative;
+    white-space:nowrap;
+}
+
+@keyframes slide {
+    from{
+    left: 600px;
+    }
+
+    to {
+    left: 0px;
+    }
+}
+
+
