@@ -24,11 +24,23 @@
 
   <!-- 多筆資料 (陣列) -->
   <div fxLayoutGap="15px" fxLayout="column" >
-    <div  class="news" *ngFor="let new of newsinfo">
-      <h2><b>{{new.category}}</b></h2>
-      <h3>{{new.title}}</h3>
-      <h4>{{new.content}}</h4>
+    <div *ngFor="let new of newsinfo">
+      <div *ngIf="new.category != '疫情'" class="news" >
+        <h2><b>{{new.category}}</b></h2>
+        <h3>{{new.title}}</h3>
+        <h4>{{new.content}}</h4>
+      </div>
+      <div *ngIf="new.category == '疫情'" class="special_new" >
+        <h2><b>{{new.category}}</b></h2>
+        <h3>{{new.title}}</h3>
+        <h4>{{new.content}}</h4>
+      </div>
     </div>
+
   </div>
 
+</div>
+
+<div *ngIf="flag">
+  <h1> 我在這裡~ </h1>
 </div>

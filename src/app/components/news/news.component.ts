@@ -36,6 +36,8 @@ export class NewsComponent implements OnInit {
     },
   ]
 
+  flag: boolean = true;
+
   constructor() { }
 
   ngOnInit() {}

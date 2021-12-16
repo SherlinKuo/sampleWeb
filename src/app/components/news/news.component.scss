@@ -9,6 +9,12 @@ h2{
 
 }
 
+.special_new{
+    border: 2px dotted rgb(8, 143, 60);
+    padding: 10px;
+    background-color: rgb(152, 236, 215);
+}
+
 .news_marquee {
     animation : slide 7s linear  ; //infinite : 無限次
     color:rgb(0, 0, 0);
