@@ -1,46 +1,61 @@
-<div style="padding: 5px;">
+<div style="overflow-y: auto;">
+  <div style="padding: 5px; " fxLayoutGap="15px" fxLayout="column">
   
-  <app-header></app-header>
+    <div>
+      <app-header></app-header>
 
-  <!-- <span>dotted</span> -->
-  <hr style="border: 1px dotted rgb(7, 65, 43);"/>
-  <!-- <span>solid</span> <hr style="border: 3px solid rgb(95, 233, 180);"/>
-  <span>dashed</span><hr style="border: 3px dashed rgb(95, 233, 180);"/>
-  <span>double</span><hr style="border: 3px double rgb(95, 233, 180);"/> 
-  <span>groove</span><hr style="border: 3px groove rgb(95, 233, 180);"/> 
-  <span>ridge</span><hr style="border: 3px ridge rgb(95, 233, 180);"/> 
-  <span>inset</span><hr style="border: 3px inset rgb(95, 233, 180);"/> 
-  <span>outset</span><hr style="border: 3px outset rgb(95, 233, 180);"/>  -->
+    <!-- <span>dotted</span> -->
 
-  <h1>{{title}}</h1>
+      <hr style="border: 1px dotted rgb(7, 65, 43);"/>
+      <!-- <span>solid</span> <hr style="border: 3px solid rgb(95, 233, 180);"/>
+      <span>dashed</span><hr style="border: 3px dashed rgb(95, 233, 180);"/>
+      <span>double</span><hr style="border: 3px double rgb(95, 233, 180);"/> 
+      <span>groove</span><hr style="border: 3px groove rgb(95, 233, 180);"/> 
+      <span>ridge</span><hr style="border: 3px ridge rgb(95, 233, 180);"/> 
+      <span>inset</span><hr style="border: 3px inset rgb(95, 233, 180);"/> 
+      <span>outset</span><hr style="border: 3px outset rgb(95, 233, 180);"/>  -->
+    </div>
 
-  <!-- 一般 object 使用 -->
-  <!-- <div style="border: 3px dashed rgb(11, 22, 85);">
-    <h2>{{newinfo.category}}</h2>
-    <h3>{{newinfo.title}}</h3>
-    <h4>{{newinfo.content}}</h4>
-  </div> -->
+    <h1>{{title}}</h1>
+
+    <!-- 一般 object 使用 -->
+    <!-- <div style="border: 3px dashed rgb(11, 22, 85);">
+      <h2>{{newinfo.category}}</h2>
+      <h3>{{newinfo.title}}</h3>
+      <h4>{{newinfo.content}}</h4>
+    </div> -->
 
 
-  <!-- 多筆資料 (陣列) -->
-  <div fxLayoutGap="15px" fxLayout="column" >
-    <div *ngFor="let new of newsinfo">
-      <div *ngIf="new.category != '疫情'" class="news" >
-        <h2><b>{{new.category}}</b></h2>
-        <h3>{{new.title}}</h3>
-        <h4>{{new.content}}</h4>
+    <!-- 多筆資料 (陣列) ngif -->
+    <div fxLayoutGap="15px" fxLayout="column" >
+      <div *ngFor="let new of newsinfo">
+        <div *ngIf="new.category != '疫情'" class="news" >
+          <h2><b>{{new.category}}</b></h2>
+          <h3>{{new.title}}</h3>
+          <h4>{{new.content}}</h4>
+        </div>
+        <div *ngIf="new.category == '疫情'" class="special_new" >
+          <h2><b>{{new.category}}</b></h2>
+          <h3>{{new.title}}</h3>
+          <h4>{{new.content}}</h4>
+        </div>
       </div>
-      <div *ngIf="new.category == '疫情'" class="special_new" >
-        <h2><b>{{new.category}}</b></h2>
-        <h3>{{new.title}}</h3>
-        <h4>{{new.content}}</h4>
+    </div>
+
+    <!-- 多筆資料 (陣列) ngclass-->
+    <div fxLayoutGap="15px" fxLayout="column" >
+      <div *ngFor="let new of newsinfo">
+        <div [ngClass]="{'news':new.category != '疫情', 'special_new': new.category == '疫情'}" >
+          <h2><b>{{new.category}}</b></h2>
+          <h3>{{new.title}}</h3>
+          <h4>{{new.content}}</h4>
+        </div>
       </div>
     </div>
 
   </div>
 
-</div>
-
-<div *ngIf="flag">
-  <h1> 我在這裡~ </h1>
+  <div *ngIf="flag">
+    <h1> 我在這裡~ </h1>
+  </div>
 </div>
